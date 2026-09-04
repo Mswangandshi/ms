@@ -217,7 +217,7 @@ async function loadData() {
         const files = manifest[key] || [];
         imgMap[key] = files.map((f, i) => ({
           idx: i + 1,
-          url: `子集/${key}/${encodeURIComponent(f)}`,
+          url: `子集/${key.split('/').map(encodeURIComponent).join('/')}/${encodeURIComponent(f)}`,
           filename: f
         }));
       }
@@ -229,7 +229,7 @@ async function loadData() {
       const pn = c.project_name;
       const dim = c.hasScreenshot ? '截图' : '手稿';
       promptPromises.push(
-        fetch(`子集/${dim}/${pn}/prompt.txt`)
+        fetch(`子集/${encodeURIComponent(dim)}/${pn.split('/').map(encodeURIComponent).join('/')}/prompt.txt`)
           .then(r => r.ok ? r.text() : '')
           .then(t => { prompts[pn] = t.trim(); })
           .catch(() => {})
