@@ -1,0 +1,13 @@
+想做一个潮汐预报类的海洋数据App，深色主题配蓝色渐变潮汐曲线，参考这5张截图：
+
+<tide-guide_005.webp> 订阅引导页，深蓝渐变背景，iPhone 3D渲染展示App界面，下方Free/Pro对比和"Start Free Trial"按钮，右上角"Skip"。跳过后进入 <tide-guide_001.webp>。
+
+<tide-guide_001.webp> 站点列表主页，黑色背景上纵向排列4张深蓝渐变圆角卡片，每张含站点名、当前潮高+升降箭头、蓝色渐变潮汐曲线图（标注高低潮时间和红点当前位置），底部搜索栏和地图入口。点击地图图标进入 <tide-guide_002.webp>，点击站点卡片进入 <tide-guide_004.webp>。
+
+<tide-guide_002.webp> 站点地图全屏视图，卫星暗色Apple Maps上分布蓝色潮汐站点pin（白色鲸尾图标），顶部标题和关闭按钮。点击某个pin进入 <tide-guide_003.webp>。
+
+<tide-guide_003.webp> 地图选中站点状态，被选pin放大高亮，底部浮动深色信息卡片含站点名、迷你潮汐曲线、天气数据行（气温/水温/浪高/UV）。点击卡片进入详情，点X关闭回到 <tide-guide_002.webp>。
+
+<tide-guide_004.webp> 站点详情页，浅蓝渐变背景，中央大号罗盘式风向盘（风速/阵风/方向），上方天气数据条，下方潮汐曲线图，底部Today/Charts/Tables/Solunar四个tab。
+
+注意保持深色和浅色页面间的主题差异，还原地图交互和潮汐曲线的视觉风格。

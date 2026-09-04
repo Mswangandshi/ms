@@ -1,0 +1,3 @@
+嘿，帮我做一个类似Stitch的AI UI设计工具，用户输入自然语言就能生成App和Web界面设计稿，目前还在Beta阶段。5张截图流程：<stitch_003.webp> 深色落地页（黑底蓝紫光晕，"Design at the speed of AI"标题+底部毛玻璃prompt输入框，含App/Web切换和模型选择） → <stitch_004.webp> Google登录页空白状态 → <stitch_005.webp> Google登录页已填写邮箱 → <stitch_001.webp> 工作台首页（左侧项目列表含多个示例项目，主区域欢迎标题+快速提示标签+多行prompt输入框） → <stitch_002.webp> 设计结果页（左侧AI对话面板描述设计方案，中央画布展示生成的多屏设计稿，右侧工具栏，底部追问输入框+快速建议标签）。
+
+落地页"Try now"跳转Google登录，登录后进工作台，提交prompt后进入设计结果页。

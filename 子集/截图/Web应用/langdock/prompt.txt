@@ -1,0 +1,5 @@
+多模型对话加Canvas文档协作，Langdock这个企业AI平台的核心差异化就在这里 -- 4张截图完整还原。
+
+<langdock_003.webp> 营销落地页（白色简洁背景、蓝色闪电logo、"The Platform for AI Adoption"标题、笔记本电脑产品截图带"Watch product tour"播放按钮）→ 点击"Get started"进入 <langdock_005.webp> 注册页（深灰背景+白色卡片、蓝紫渐变装饰条、邮箱输入+Friendly Captcha验证、Google/Microsoft两种社交登录）→ 登录后进入 <langdock_001.webp> AI对话主界面（左侧导航含New chat/Search/Inbox/Library/Agents/Skills/Workflows等、右侧对话区带上传PDF附件和角色提示词、底部工具栏含Canvas标签和GPT-5模型选择器、快捷功能按钮行）→ 发送后进入 <langdock_002.webp> Canvas分屏视图（左侧对话面板展示PDF预览/AI操作步骤/生成文档链接，右侧Canvas编辑器含格式工具栏/Export按钮/结构化研究报告内容）。
+
+保持对话界面和Canvas视图之间的分屏联动关系。

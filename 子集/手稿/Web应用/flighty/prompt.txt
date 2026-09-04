@@ -1,0 +1,13 @@
+3D地球仪可视化加上航班实时数据，Flighty这款航班追踪App的设计相当有特色。需要复刻以下5个页面的完整流程：
+
+<flighty_001.webp> 启动闪屏 — 全黑背景，中央深灰色飞机剪影图标斜向上方，底部版权信息小字。
+
+<flighty_003.webp> 主界面"My Flights" — 上半部分是3D夜景地球仪（显示欧洲和大西洋区域城市标签，蓝色弧线航线），右上角地图图层和天气按钮。下半部分白色卡片面板：紫色PRO推广横幅、两条航班条目（Delta DL 1421显示1 DAY倒计时SFO→LAX，国泰CX 7786显示2 DAYS倒计时LAX→MEX，含航司图标、时间和备注信息如"Long Layover"）。底部四图标tab栏（My Flights/Friends/Passport/Search）。
+
+<flighty_002.webp> 添加航班搜索 — 模态弹窗覆盖在地球仪上方，标题"Add Flight"，三个筛选胶囊（出发机场/到达机场/日期），Codeshares和All Airlines过滤按钮，航班结果列表（每条含倒计时、航司图标、航班号、准点状态绿色标签、航线和时间）。
+
+<flighty_004.webp> 机场总览页 — 模态弹窗，地球仪显示太平洋视角（绿色/橙色圆点标记机场状态），"Airports"标题下有区域筛选tab（Now/All/Asia/North America/Eu...），"For You"区域列出SFO和LAX的准点率/平均延误/取消率统计数据，下方"Major Issues"区域。
+
+<flighty_005.webp> 机场详情页 — 广州白云国际机场，顶部卫星地图，机场代码CAN和本地时间，红色Major Issues警告卡片（出发延误1h37m/到达延误1h4m/天气状况），出发准点率堆叠条形图（On Time 38%/Delayed 59%/Canceled 3%），起飞延误趋势柱状图。底部工具栏含收藏和分享。
+
+跳转关系：<flighty_001.webp> 加载后 → <flighty_003.webp> → Search tab → <flighty_002.webp>（模态）→ 也可导航至 <flighty_004.webp>（机场总览模态）→ 点击具体机场 → <flighty_005.webp>。注意模态弹窗与地球仪的层叠关系。

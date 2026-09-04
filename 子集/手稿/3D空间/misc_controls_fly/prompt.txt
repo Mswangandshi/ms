@@ -1,0 +1,18 @@
+我在做一个太空探索的交互演示，需要复现截图中的地球飞行场景。
+
+画面中一颗高度写实的蓝色星球悬浮在漆黑的宇宙背景中，地球表面贴有高分辨率的大气层纹理，可以清晰看到北美大陆、南美洲海岸线、白色云层团簇漂浮在海洋之上，陆地区域能分辨出棕色的沙漠和绿色的植被。地球边缘泛着一层淡蓝色大气散射光晕，海洋表面有镜面高光反射。云层作为独立的半透明层覆盖在地球表面之上，略微高于地表，会以略快于地球本体的速度缓缓自转。远处还有一颗月球围绕地球运行。
+
+深邃的太空背景中散落着大量星点粒子，呈现不同亮度和灰度，营造出逼真的星空效果。整个场景带有轻微的胶片颗粒后处理滤镜效果。
+
+操控方式为键盘飞行控制：WASD键控制前后左右移动，R/F键控制上升/下降，Q/E键控制翻滚，方向键上/下控制俯仰，方向键左/右控制偏航。飞行速度会随距离地球表面的远近而自动调节——靠近地表时减速，远离时加速。
+
+页面顶部居中显示标题"three.js - earth [fly controls]"，下方一行用橙色高亮键位名的操作说明"WASD move, R|F up | down, Q|E roll, up|down pitch, left|right yaw"。左上角叠加实时FPS性能监控面板。
+
+纹理资源：
+https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg
+https://threejs.org/examples/textures/planets/earth_specular_2048.jpg
+https://threejs.org/examples/textures/planets/earth_normal_2048.jpg
+https://threejs.org/examples/textures/planets/earth_clouds_1024.png
+https://threejs.org/examples/textures/planets/moon_1024.jpg
+
+请生成一个完整可运行的HTML文件，创建带有真实纹理和法线贴图的地球模型、半透明云层、月球以及星空粒子背景，实现键盘飞行控制和自适应飞行速度，添加胶片颗粒后处理效果，还原截图中的太空氛围和页面UI元素。

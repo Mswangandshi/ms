@@ -1,0 +1,1 @@
+我在做产品竞品分析报告，需要一个平行坐标图。请复现截图的样式——每根竖轴代表一个维度，折线连接数据点。数据用的是经典汽车数据集（mpg/cylinders/displacement/horsepower/weight/acceleration/year这些维度）。加上刷选功能：可以在任意轴上拖拽选择范围来过滤数据，被过滤掉的线条变灰半透明。

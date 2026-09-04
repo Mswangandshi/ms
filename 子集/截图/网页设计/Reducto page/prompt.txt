@@ -1,0 +1,3 @@
+Reducto是一个文档数据提取平台，以下是其官网落地页的13张连续滚动截图，展示了该页面的主要内容。页面白色背景搭配品红/紫红色（magenta）作为品牌强调色，非常醒目。顶部有一条品红色通栏公告横幅"Announcing $108M in total funding and our Series B led by a16z"。导航栏包含Pricing、Blog、Careers、Docs，右侧是Log in和描边"Contact sales"按钮。首屏大标题"Turn documents into data. Build without constraints."中"data."一词用品红色高亮，字号巨大。下方有品红色实心"Try for free"和白色描边"Request a demo"两个按钮。页面底部露出了多种文档类型的灰色线框示意图。
+
+请按照截图将Reducto官网1:1精确复刻，品红色强调、白底排版、公告横幅和文字内容都要精确还原。

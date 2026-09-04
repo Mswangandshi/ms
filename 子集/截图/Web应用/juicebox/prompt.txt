@@ -1,0 +1,13 @@
+想搭一个类似Juicebox/PeopleGPT的AI招聘平台，有5张截图从官网到搜索结果。
+
+<juicebox_003.webp> 营销落地页 — 深色公告横幅（Sequoia融资新闻）、导航栏含FEATURES/PRICING/RESOURCES等、Hero区大标题"Win the talent war."和双CTA按钮、客户logo滚动条（PATREON/creditkarma/ramp/Verkada等）、紫色试搜区。点"TRY FOR FREE"进注册。
+
+<juicebox_004.webp> 注册页 — 左右分屏：左侧"Welcome to PeopleGPT"卡片含地球+人物标签插图和信任logo，右侧三种注册方式（Google/Email/SSO）和底部合规徽章（CCPA/GDPR/ISO 42001/SOC 2）。
+
+<juicebox_005.webp> 邮箱注册表单 — 左侧不变，右侧切换为返回箭头+"Sign up with email"标题、三个输入框（Full Name/Email/Password）和"Continue"按钮，已有账号可点Login跳转。
+
+<juicebox_001.webp> PeopleGPT搜索主界面 — 左侧导航栏（All Projects/All Agents/项目层级/Contacts/Sequences等），主区域居中展示PeopleGPT logo和多tab搜索入口（Who are you looking for?/Find Similar/Job Description/Boolean/Select Manually），大文本输入框带紫色发送按钮，下方筛选chips和免费试用提示。
+
+<juicebox_002.webp> 搜索结果页 — 顶部Search/Autopilot/Insights标签，查询条件展示栏带AI解析的筛选标签（职位+地区+经验），候选人列表每条含姓名、职位公司、学历、LinkedIn/GitHub等社交图标和"Shortlist"按钮，分页显示"1-15 of 236"。
+
+注册页和邮箱表单页共享左侧面板布局，搜索主界面和结果页共享左侧项目导航。

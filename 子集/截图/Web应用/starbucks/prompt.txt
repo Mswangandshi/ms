@@ -1,0 +1,13 @@
+星巴克App的深绿色品牌体系和金色星星奖励视觉贯穿整个体验。我要还原从启动到点单的完整流程，共5个界面：
+
+<starbucks_001.webp> 启动闪屏 — 全屏彩色冰饮摄影背景（紫粉到暖橙渐变），居中叠加绿色圆形星巴克海妖logo。无交互元素，自动过渡到 <starbucks_005.webp>。
+
+<starbucks_005.webp> Rewards注册推广页 — 深绿色全屏背景。顶部右侧X关闭按钮。"STARBUCKS REWARDS"白色大写标题，下方两个白色外带杯碰杯插图配金色星星装饰。主标语"Your Starbucks run, rewarded"，副文案说明积分权益。底部"Join now"白色实心按钮和"Sign in"绿色描边按钮。点击"Sign in"进入 <starbucks_002.webp>。
+
+<starbucks_002.webp> 主仪表盘 — 顶部"Morning,"问候语+信封（带绿色通知点）/门店/二维码/个人图标。主区域依次为：金色星星余额卡片（597星+GOLD STATUS标识）、促销活动卡片（奶油色背景，展示75 Bonus Stars任务清单含5个消费项目+绿色Start按钮）、"LET'S GET STARTED"区域+深绿色"Scan in store"按钮。底部五栏tab导航：Home/Scan/Order/Gift/Rewards。点击Scan进入 <starbucks_003.webp>。
+
+<starbucks_003.webp> 扫码支付卡 — 顶部用户信息和添加卡片按钮，"Scan & pay"/"Scan only"分段切换。主体为白色圆角礼品卡（绿色咖啡杯艺术插图+星巴克logo），下方显示$0.00余额和"Earns 1 star per $1"标签，条形码区域，底部Make default/Manage/Add funds三个操作按钮。点击Order tab进入 <starbucks_004.webp>。
+
+<starbucks_004.webp> 门店定位页 — 顶部Pickup/Delivery切换开关，Apple Maps地图视图（绿色星巴克标记+蓝色用户定位点），右侧定位和路线按钮+Filter按钮。下方Nearby/Previous/Favorites三个tab，门店列表展示地址、距离、营业时间、"Order here"绿色按钮，部分门店显示橙色"Online ordering not available"标签。
+
+注意深绿色品牌色贯穿所有CTA按钮和导航栏高亮，金色元素专用于奖励相关组件，底部tab导航在仪表盘、扫码、点单页间保持一致。

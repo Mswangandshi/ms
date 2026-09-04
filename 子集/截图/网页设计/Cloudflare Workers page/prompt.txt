@@ -1,0 +1,1 @@
+以下是Cloudflare官网落地页的连续滚动截图，共10张，展示了该页面的主要内容。Cloudflare是全球知名的云服务与网络安全平台。页面Hero区域采用醒目的橙红色渐变大背景，白色大标题文字，下方有白色圆角"Start building"按钮。导航栏为深色半透明风格，包含Products、Solutions、Resources、Pricing，右侧有"Under Attack?"、Login和"Start building"按钮。请根据这些截图，1:1精确复刻页面中展示的内容，还原每个区块的布局结构、字体样式、间距比例、配色方案和文字内容，生成一个完整的单页网站。

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>评测集查看器</title>
+<style>
+:root {
+  --bg: #0f1117;
+  --card: #1a1d27;
+  --border: #2a2d3a;
+  --text: #e1e4ed;
+  --text2: #8b8fa3;
+  --accent: #6c72cb;
+  --accent2: #4a9eff;
+  --green: #2ea043;
+  --yellow: #d29922;
+  --red: #f85149;
+  --low: #2ea043;
+  --mid: #d29922;
+  --high: #f85149;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+
+#loading { position:fixed; inset:0; background:var(--bg); display:flex; align-items:center; justify-content:center; z-index:9999; flex-direction:column; gap:16px; }
+#loading .spinner { width:40px; height:40px; border:3px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:spin .8s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+
+.top-bar { background: var(--card); border-bottom:1px solid var(--border); padding:16px 24px; position:sticky; top:0; z-index:100; }
+.top-bar h1 { font-size:18px; font-weight:600; }
+.top-bar .subtitle { font-size:13px; color:var(--text2); margin-top:2px; }
+
+.overview { padding:20px 24px; display:flex; gap:12px; flex-wrap:wrap; }
+.overview-card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:16px 20px; min-width:150px; flex:1; }
+.overview-card .label { font-size:12px; color:var(--text2); letter-spacing:.5px; margin-bottom:8px; }
+.overview-card .count { font-size:28px; font-weight:700; }
+.overview-card .sub-count { font-size:12px; color:var(--text2); margin-top:2px; }
+.overview-card .bar { display:flex; height:6px; border-radius:3px; overflow:hidden; margin-top:10px; gap:2px; }
+.overview-card .bar span { border-radius:2px; }
+.overview-card .bar .b-low { background:var(--low); }
+.overview-card .bar .b-mid { background:var(--mid); }
+.overview-card .bar .b-high { background:var(--high); }
+.overview-card .legend { display:flex; gap:12px; margin-top:6px; font-size:11px; color:var(--text2); }
+.overview-card .legend i { display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:3px; vertical-align:middle; }
+
+.tab-bar { padding:0 24px; display:flex; gap:0; border-bottom:1px solid var(--border); background:var(--card); position:sticky; top:60px; z-index:99; }
+.tab-btn { padding:12px 20px; font-size:14px; color:var(--text2); cursor:pointer; border:none; background:none; border-bottom:2px solid transparent; transition:all .2s; white-space:nowrap; }
+.tab-btn:hover { color:var(--text); }
+.tab-btn.active { color:var(--accent2); border-bottom-color:var(--accent2); }
+.tab-btn .badge { background:var(--border); color:var(--text2); font-size:11px; padding:1px 6px; border-radius:8px; margin-left:6px; }
+.tab-btn.active .badge { background:var(--accent2); color:#fff; }
+
+.filter-bar { padding:12px 24px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.filter-bar label { font-size:13px; color:var(--text2); margin-right:4px; }
+.filter-btn { padding:5px 14px; font-size:12px; border-radius:6px; border:1px solid var(--border); background:var(--card); color:var(--text2); cursor:pointer; transition:all .15s; }
+.filter-btn:hover { border-color:var(--accent2); color:var(--text); }
+.filter-btn.active { background:var(--accent2); border-color:var(--accent2); color:#fff; }
+.search-input { padding:5px 12px; font-size:12px; border-radius:6px; border:1px solid var(--border); background:var(--bg); color:var(--text); width:220px; margin-left:auto; }
+.search-input::placeholder { color:var(--text2); }
+
+.case-list { padding:12px 24px 40px; display:flex; flex-direction:column; gap:12px; }
+.case-card { background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; transition:border-color .2s; }
+.case-card:hover { border-color:#3a3d4a; }
+
+.case-header { padding:14px 18px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.case-header .proj-name { font-size:14px; font-weight:600; }
+.tag { font-size:11px; padding:2px 8px; border-radius:4px; }
+.tag-l2 { background:#2a2060; color:#a5a8ff; }
+.tag-diff-低 { background:#0d3117; color:#3fb950; }
+.tag-diff-中 { background:#3d2e00; color:#d29922; }
+.tag-diff-高 { background:#3d1117; color:#f85149; }
+.tag-task { background:#1a2a3a; color:#58a6ff; }
+.tag-score { background:#1a1a2e; color:#8b8fa3; font-size:10px; }
+.tag-source { font-size:11px; padding:2px 8px; border-radius:4px; }
+.tag-source-截图 { background:#1a2e1a; color:#3fb950; }
+.tag-source-手稿 { background:#2e1a2e; color:#c58aff; }
+.tag-source-both { background:#1a2a3a; color:#58a6ff; }
+
+.collapsible { border-top:1px solid var(--border); }
+.collapsible-toggle { width:100%; padding:10px 18px; font-size:13px; color:var(--text2); background:none; border:none; cursor:pointer; text-align:left; display:flex; align-items:center; gap:6px; }
+.collapsible-toggle:hover { color:var(--text); }
+.collapsible-toggle .arrow { transition:transform .2s; font-size:10px; }
+.collapsible-toggle.open .arrow { transform:rotate(90deg); }
+.collapsible-body { display:none; padding:0 18px 14px; }
+.collapsible-body.open { display:block; }
+
+.prompt-text { font-size:13px; color:var(--text); white-space:pre-wrap; word-break:break-all; max-height:300px; overflow-y:auto; background:var(--bg); padding:12px; border-radius:6px; line-height:1.6; }
+
+.img-compare { padding:14px 18px; display:flex; gap:16px; }
+.img-col { flex:1; min-width:0; }
+.img-col-title { font-size:12px; color:var(--text2); margin-bottom:8px; font-weight:600; letter-spacing:.5px; text-align:center; }
+.img-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(100px, 1fr)); gap:6px; }
+.img-grid.cols-1 { grid-template-columns:1fr; }
+.img-grid.cols-2 { grid-template-columns:repeat(2, 1fr); }
+.img-grid.cols-3 { grid-template-columns:repeat(3, 1fr); }
+/* 游戏单列展示时图片稍大 */
+.img-section { padding:14px 18px; }
+.img-section .img-grid { grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); }
+.img-thumb { position:relative; aspect-ratio:4/3; border-radius:6px; overflow:hidden; cursor:pointer; border:1px solid var(--border); background:var(--bg); transition:border-color .15s; }
+.img-thumb:hover { border-color:var(--accent2); }
+.img-thumb img { width:100%; height:100%; object-fit:cover; }
+.img-thumb .seq { position:absolute; top:4px; left:4px; background:rgba(0,0,0,.7); color:#fff; font-size:10px; padding:1px 5px; border-radius:3px; }
+
+.tags-detail { background:var(--bg); border-radius:6px; padding:12px; font-size:12px; font-family:'SF Mono',Monaco,monospace; color:var(--text); white-space:pre-wrap; max-height:400px; overflow-y:auto; line-height:1.5; }
+
+/* 灯箱 */
+.lightbox { position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:1000; display:none; flex-direction:column; }
+.lightbox.open { display:flex; }
+.lb-header { padding:12px 20px; display:flex; justify-content:space-between; align-items:center; }
+.lb-header .lb-title { font-size:14px; font-weight:600; }
+.lb-close { background:none; border:none; color:var(--text); font-size:24px; cursor:pointer; padding:4px 8px; }
+.lb-body { flex:1; display:flex; gap:12px; padding:0 20px; min-height:0; }
+.lb-body.single-pane { justify-content:center; }
+.lb-pane { flex:1; display:flex; flex-direction:column; min-width:0; }
+.lb-body.single-pane .lb-pane { flex:none; max-width:80%; }
+.lb-pane-title { font-size:12px; color:var(--text2); text-align:center; margin-bottom:8px; }
+.lb-pane-img { flex:1; display:flex; align-items:center; justify-content:center; min-height:0; }
+.lb-pane-img img { max-width:100%; max-height:100%; object-fit:contain; border-radius:6px; }
+.lb-nav { padding:16px 20px; display:flex; justify-content:center; align-items:center; gap:6px; flex-wrap:wrap; }
+.lb-nav button { width:32px; height:32px; border-radius:6px; border:1px solid var(--border); background:var(--card); color:var(--text2); cursor:pointer; font-size:12px; }
+.lb-nav button:hover { border-color:var(--accent2); color:var(--text); }
+.lb-nav button.active { background:var(--accent2); border-color:var(--accent2); color:#fff; }
+.lb-nav .lb-arrow { width:36px; font-size:16px; }
+
+::-webkit-scrollbar { width:6px; height:6px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
+::-webkit-scrollbar-thumb:hover { background:#3a3d4a; }
+</style>
+</head>
+<body>
+
+<div id="loading">
+  <div class="spinner"></div>
+  <div style="color:var(--text2);font-size:14px;">加载评测数据...</div>
+</div>
+
+<div id="app" style="display:none;">
+  <div class="top-bar">
+    <h1>图生代码评测集 — 查看器</h1>
+    <div class="subtitle">截图 + 手稿共 <span id="total-count"></span> 条</div>
+  </div>
+
+  <div class="overview" id="overview"></div>
+  <div class="tab-bar" id="tab-bar"></div>
+
+  <div class="filter-bar">
+    <label>难度：</label>
+    <button class="filter-btn active" data-level="all">全部</button>
+    <button class="filter-btn" data-level="低">低</button>
+    <button class="filter-btn" data-level="中">中</button>
+    <button class="filter-btn" data-level="高">高</button>
+    <input type="text" class="search-input" id="search-input" placeholder="搜索项目名 / prompt...">
+  </div>
+
+  <div class="case-list" id="case-list"></div>
+</div>
+
+<!-- 灯箱 -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-header">
+    <span class="lb-title" id="lb-title"></span>
+    <button class="lb-close" onclick="closeLightbox()">&times;</button>
+  </div>
+  <div class="lb-body" id="lb-body"></div>
+  <div class="lb-nav" id="lb-nav"></div>
+</div>
+
+<script>
+let screenshotTags = [];
+let sketchTags = [];
+let allCases = []; // 合并去重后的 case 列表
+let prompts = {};
+let imgMap = {};
+let manifest = {};
+
+let currentTab = '';
+let currentLevel = 'all';
+let searchQuery = '';
+
+async function loadData() {
+  try {
+    const [stRes, skRes, mfRes] = await Promise.all([
+      fetch('子集/截图/截图_all_tags.json'),
+      fetch('子集/手稿/手稿_all_tags.json'),
+      fetch('子集/img_manifest.json')
+    ]);
+    screenshotTags = await stRes.json();
+    sketchTags = await skRes.json();
+    manifest = await mfRes.json();
+
+    // 合并 case：以 project_name 为 key 去重
+    const caseMap = {};
+    screenshotTags.forEach(t => {
+      caseMap[t.project_name] = { tag: t, hasScreenshot: true, hasSketch: false };
+    });
+    sketchTags.forEach(t => {
+      if (caseMap[t.project_name]) {
+        caseMap[t.project_name].hasSketch = true;
+      } else {
+        caseMap[t.project_name] = { tag: t, hasScreenshot: false, hasSketch: true };
+      }
+    });
+    allCases = Object.entries(caseMap).map(([pn, v]) => ({
+      project_name: pn,
+      tag: v.tag,
+      hasScreenshot: v.hasScreenshot,
+      hasSketch: v.hasSketch
+    }));
+
+    // 构建 imgMap
+    for (const c of allCases) {
+      const pn = c.project_name;
+      for (const dim of ['截图', '手稿']) {
+        const key = `${dim}/${pn}`;
+        const files = manifest[key] || [];
+        imgMap[key] = files.map((f, i) => ({
+          idx: i + 1,
+          url: `子集/${key}/${encodeURIComponent(f)}`,
+          filename: f
+        }));
+      }
+    }
+
+    // 加载 prompts（截图优先，无则手稿）
+    const promptPromises = [];
+    for (const c of allCases) {
+      const pn = c.project_name;
+      const dim = c.hasScreenshot ? '截图' : '手稿';
+      promptPromises.push(
+        fetch(`子集/${dim}/${pn}/prompt.txt`)
+          .then(r => r.ok ? r.text() : '')
+          .then(t => { prompts[pn] = t.trim(); })
+          .catch(() => {})
+      );
+    }
+    await Promise.all(promptPromises);
+
+    initUI();
+  } catch(e) {
+    document.getElementById('loading').innerHTML = `<div style="color:var(--red);font-size:14px;">加载失败：${e.message}<br><br>请在评测集目录下运行：<br><code style="background:#222;padding:4px 8px;border-radius:4px;">python3 -m http.server 8080</code><br>然后访问 <code>http://localhost:8080/review.html</code></div>`;
+    console.error(e);
+  }
+}
+
+function initUI() {
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  document.getElementById('total-count').textContent = screenshotTags.length + sketchTags.length;
+
+  renderOverview();
+  renderTabs();
+  bindFilters();
+
+  const types = getTypeL1List();
+  if (types.length > 0) {
+    currentTab = types[0];
+    document.querySelector('.tab-btn')?.classList.add('active');
+    renderCaseList();
+  }
+}
+
+function getTypeL1List() {
+  const set = new Set();
+  allCases.forEach(c => set.add(c.tag.metadata_dimension.type_l1));
+  return [...set].sort();
+}
+
+// ===== 概览 =====
+function renderOverview() {
+  const container = document.getElementById('overview');
+  const types = getTypeL1List();
+  const allTags = [...screenshotTags, ...sketchTags];
+  const allByLevel = { '低': 0, '中': 0, '高': 0 };
+  allTags.forEach(t => { allByLevel[t.metadata_dimension.difficulty.level]++; });
+
+  let html = renderOverviewCard('全部', allTags.length, allByLevel,
+    `${screenshotTags.length} 截图 + ${sketchTags.length} 手稿`);
+
+  types.forEach(type => {
+    const stItems = screenshotTags.filter(t => t.metadata_dimension.type_l1 === type);
+    const skItems = sketchTags.filter(t => t.metadata_dimension.type_l1 === type);
+    const items = [...stItems, ...skItems];
+    const byLevel = { '低': 0, '中': 0, '高': 0 };
+    items.forEach(t => { byLevel[t.metadata_dimension.difficulty.level]++; });
+    html += renderOverviewCard(type, items.length, byLevel,
+      `${stItems.length} 截图 + ${skItems.length} 手稿`);
+  });
+
+  container.innerHTML = html;
+}
+
+function renderOverviewCard(label, count, byLevel, subText) {
+  return `<div class="overview-card">
+    <div class="label">${label}</div>
+    <div class="count">${count}</div>
+    <div class="sub-count">${subText}</div>
+    <div class="bar">
+      ${byLevel['低'] > 0 ? `<span class="b-low" style="flex:${byLevel['低']}"></span>` : ''}
+      ${byLevel['中'] > 0 ? `<span class="b-mid" style="flex:${byLevel['中']}"></span>` : ''}
+      ${byLevel['高'] > 0 ? `<span class="b-high" style="flex:${byLevel['高']}"></span>` : ''}
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--low)"></i>低 ${byLevel['低']}</span>
+      <span><i style="background:var(--mid)"></i>中 ${byLevel['中']}</span>
+      <span><i style="background:var(--high)"></i>高 ${byLevel['高']}</span>
+    </div>
+  </div>`;
+}
+
+// ===== Tabs =====
+function renderTabs() {
+  const container = document.getElementById('tab-bar');
+  const types = getTypeL1List();
+  container.innerHTML = types.map(type => {
+    const stCount = screenshotTags.filter(t => t.metadata_dimension.type_l1 === type).length;
+    const skCount = sketchTags.filter(t => t.metadata_dimension.type_l1 === type).length;
+    return `<button class="tab-btn" data-type="${type}">${type}<span class="badge">${stCount + skCount}</span></button>`;
+  }).join('');
+
+  container.addEventListener('click', e => {
+    const btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+    container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentTab = btn.dataset.type;
+    renderCaseList();
+  });
+}
+
+// ===== 筛选 =====
+function bindFilters() {
+  document.querySelectorAll('[data-level]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-level]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentLevel = btn.dataset.level;
+      renderCaseList();
+    });
+  });
+  document.getElementById('search-input').addEventListener('input', e => {
+    searchQuery = e.target.value.trim().toLowerCase();
+    renderCaseList();
+  });
+}
+
+// ===== Case 列表 =====
+function getFilteredCases() {
+  return allCases.filter(c => {
+    const tag = c.tag;
+    if (tag.metadata_dimension.type_l1 !== currentTab) return false;
+    if (currentLevel !== 'all' && tag.metadata_dimension.difficulty.level !== currentLevel) return false;
+    if (searchQuery) {
+      const pn = c.project_name.toLowerCase();
+      const prompt = (prompts[c.project_name] || '').toLowerCase();
+      if (!pn.includes(searchQuery) && !prompt.includes(searchQuery)) return false;
+    }
+    return true;
+  });
+}
+
+function renderCaseList() {
+  const container = document.getElementById('case-list');
+  const cases = getFilteredCases();
+
+  if (cases.length === 0) {
+    container.innerHTML = '<div style="text-align:center;color:var(--text2);padding:40px;">暂无匹配的 Case</div>';
+    return;
+  }
+
+  container.innerHTML = cases.map(c => renderCaseCard(c)).join('');
+}
+
+function renderCaseCard(c) {
+  const pn = c.project_name;
+  const tag = c.tag;
+  const projShort = pn.split('/').pop();
+  const level = tag.metadata_dimension.difficulty.level;
+  const typeL2 = tag.metadata_dimension.type_l2;
+  const taskType = tag.task_type;
+  const totalScore = tag.metadata_dimension.difficulty.total_score;
+  const isGame = tag.metadata_dimension.type_l1 === '游戏';
+  const isBoth = c.hasScreenshot && c.hasSketch;
+
+  // 来源标签
+  let sourceTag = '';
+  if (isBoth) {
+    sourceTag = '<span class="tag-source tag-source-both">截图+手稿</span>';
+  } else if (c.hasScreenshot) {
+    sourceTag = '<span class="tag-source tag-source-截图">截图</span>';
+  } else {
+    sourceTag = '<span class="tag-source tag-source-手稿">手稿</span>';
+  }
+
+  const screenshotImgs = imgMap[`截图/${pn}`] || [];
+  const sketchImgs = imgMap[`手稿/${pn}`] || [];
+
+  // 图片展示区
+  let imgHtml = '';
+  if (!isGame && isBoth) {
+    // 非游戏：左右对比
+    const maxImgs = Math.max(screenshotImgs.length, sketchImgs.length);
+    const gridCols = maxImgs <= 1 ? 'cols-1' : maxImgs <= 2 ? 'cols-2' : maxImgs <= 4 ? 'cols-2' : 'cols-3';
+    imgHtml = `<div class="img-compare">
+      <div class="img-col">
+        <div class="img-col-title">截图 (${screenshotImgs.length}张)</div>
+        <div class="img-grid ${gridCols}">
+          ${screenshotImgs.map((img, i) => `
+            <div class="img-thumb" onclick="openLightbox('${pn}',${i},'both')">
+              <img src="${img.url}" loading="lazy" alt="">
+              <span class="seq">${img.idx}</span>
+            </div>`).join('')}
+        </div>
+      </div>
+      <div class="img-col">
+        <div class="img-col-title">手稿 (${sketchImgs.length}张)</div>
+        <div class="img-grid ${gridCols}">
+          ${sketchImgs.map((img, i) => `
+            <div class="img-thumb" onclick="openLightbox('${pn}',${i},'both')">
+              <img src="${img.url}" loading="lazy" alt="">
+              <span class="seq">${img.idx}</span>
+            </div>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  } else {
+    // 游戏 或 只有单侧：展示有的那一侧（或两侧各自展示）
+    const sections = [];
+    if (c.hasScreenshot && screenshotImgs.length > 0) {
+      sections.push({ label: '截图', imgs: screenshotImgs, dim: '截图' });
+    }
+    if (c.hasSketch && sketchImgs.length > 0) {
+      sections.push({ label: '手稿', imgs: sketchImgs, dim: '手稿' });
+    }
+    // 如果游戏且两侧都有（交叉case），也做左右对比
+    if (isGame && isBoth && screenshotImgs.length > 0 && sketchImgs.length > 0) {
+      const maxImgs = Math.max(screenshotImgs.length, sketchImgs.length);
+      const gridCols = maxImgs <= 1 ? 'cols-1' : maxImgs <= 2 ? 'cols-2' : maxImgs <= 4 ? 'cols-2' : 'cols-3';
+      imgHtml = `<div class="img-compare">
+        <div class="img-col">
+          <div class="img-col-title">截图 (${screenshotImgs.length}张)</div>
+          <div class="img-grid ${gridCols}">
+            ${screenshotImgs.map((img, i) => `
+              <div class="img-thumb" onclick="openLightbox('${pn}',${i},'both')">
+                <img src="${img.url}" loading="lazy" alt="">
+                <span class="seq">${img.idx}</span>
+              </div>`).join('')}
+          </div>
+        </div>
+        <div class="img-col">
+          <div class="img-col-title">手稿 (${sketchImgs.length}张)</div>
+          <div class="img-grid ${gridCols}">
+            ${sketchImgs.map((img, i) => `
+              <div class="img-thumb" onclick="openLightbox('${pn}',${i},'both')">
+                <img src="${img.url}" loading="lazy" alt="">
+                <span class="seq">${img.idx}</span>
+              </div>`).join('')}
+          </div>
+        </div>
+      </div>`;
+    } else {
+      imgHtml = sections.map(sec => {
+        const gridCols = sec.imgs.length <= 2 ? 'cols-2' : sec.imgs.length <= 4 ? 'cols-3' : 'cols-3';
+        const mode = sec.dim === '截图' ? 'screenshot' : 'sketch';
+        return `<div class="img-section">
+          <div class="img-col-title">${sec.label} (${sec.imgs.length}张)</div>
+          <div class="img-grid ${gridCols}">
+            ${sec.imgs.map((img, i) => `
+              <div class="img-thumb" onclick="openLightbox('${pn}',${i},'${mode}')">
+                <img src="${img.url}" loading="lazy" alt="">
+                <span class="seq">${img.idx}</span>
+              </div>`).join('')}
+          </div>
+        </div>`;
+      }).join('');
+    }
+  }
+
+  return `<div class="case-card" data-pn="${pn}">
+    <div class="case-header">
+      <span class="proj-name">${projShort}</span>
+      ${sourceTag}
+      <span class="tag tag-l2">${typeL2}</span>
+      <span class="tag tag-diff-${level}">${level}</span>
+      <span class="tag tag-task">${taskType}</span>
+      <span class="tag tag-score">总分${totalScore}</span>
+    </div>
+
+    <div class="collapsible">
+      <button class="collapsible-toggle" onclick="toggleCollapse(this)">
+        <span class="arrow">▶</span> Prompt
+      </button>
+      <div class="collapsible-body">
+        <div class="prompt-text">${escapeHtml(prompts[pn] || '(无 prompt)')}</div>
+      </div>
+    </div>
+
+    ${imgHtml}
+
+    <div class="collapsible">
+      <button class="collapsible-toggle" onclick="toggleCollapse(this)">
+        <span class="arrow">▶</span> 标签详情
+      </button>
+      <div class="collapsible-body">
+        <div class="tags-detail">${escapeHtml(JSON.stringify(tag, null, 2))}</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function toggleCollapse(btn) {
+  btn.classList.toggle('open');
+  btn.nextElementSibling.classList.toggle('open');
+}
+
+// ===== 灯箱 =====
+let lbProject = '';
+let lbIndex = 0;
+let lbMode = 'both'; // 'both' | 'screenshot' | 'sketch'
+
+function openLightbox(pn, idx, mode) {
+  lbProject = pn;
+  lbIndex = idx;
+  lbMode = mode;
+  renderLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function renderLightbox() {
+  const screenshotImgs = imgMap[`截图/${lbProject}`] || [];
+  const sketchImgs = imgMap[`手稿/${lbProject}`] || [];
+
+  let maxLen, bodyHtml;
+
+  if (lbMode === 'both') {
+    maxLen = Math.max(screenshotImgs.length, sketchImgs.length);
+    const stImg = screenshotImgs[lbIndex];
+    const skImg = sketchImgs[lbIndex];
+    bodyHtml = `
+      <div class="lb-pane">
+        <div class="lb-pane-title">截图</div>
+        <div class="lb-pane-img">${stImg ? `<img src="${stImg.url}" alt="">` : '<span style="color:var(--text2)">无</span>'}</div>
+      </div>
+      <div class="lb-pane">
+        <div class="lb-pane-title">手稿</div>
+        <div class="lb-pane-img">${skImg ? `<img src="${skImg.url}" alt="">` : '<span style="color:var(--text2)">无</span>'}</div>
+      </div>`;
+    document.getElementById('lb-body').className = 'lb-body';
+  } else {
+    const imgs = lbMode === 'screenshot' ? screenshotImgs : sketchImgs;
+    const label = lbMode === 'screenshot' ? '截图' : '手稿';
+    maxLen = imgs.length;
+    const img = imgs[lbIndex];
+    bodyHtml = `
+      <div class="lb-pane">
+        <div class="lb-pane-title">${label}</div>
+        <div class="lb-pane-img">${img ? `<img src="${img.url}" alt="">` : ''}</div>
+      </div>`;
+    document.getElementById('lb-body').className = 'lb-body single-pane';
+  }
+
+  document.getElementById('lb-title').textContent = lbProject + ` (${lbIndex + 1}/${maxLen})`;
+  document.getElementById('lb-body').innerHTML = bodyHtml;
+
+  let navHtml = `<button class="lb-arrow" onclick="lbNav(-1)">◀</button>`;
+  for (let i = 0; i < maxLen; i++) {
+    navHtml += `<button class="${i === lbIndex ? 'active' : ''}" onclick="lbGoto(${i})">${i + 1}</button>`;
+  }
+  navHtml += `<button class="lb-arrow" onclick="lbNav(1)">▶</button>`;
+  document.getElementById('lb-nav').innerHTML = navHtml;
+}
+
+function lbNav(dir) {
+  const screenshotImgs = imgMap[`截图/${lbProject}`] || [];
+  const sketchImgs = imgMap[`手稿/${lbProject}`] || [];
+  let maxLen;
+  if (lbMode === 'both') maxLen = Math.max(screenshotImgs.length, sketchImgs.length);
+  else if (lbMode === 'screenshot') maxLen = screenshotImgs.length;
+  else maxLen = sketchImgs.length;
+  if (maxLen === 0) return;
+  lbIndex = (lbIndex + dir + maxLen) % maxLen;
+  renderLightbox();
+}
+
+function lbGoto(idx) {
+  lbIndex = idx;
+  renderLightbox();
+}
+
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') lbNav(-1);
+  if (e.key === 'ArrowRight') lbNav(1);
+});
+
+function escapeHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+loadData();
+</script>
+</body>
+</html>

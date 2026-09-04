@@ -1,0 +1,18 @@
+我在做一个协作工具的竞品分析项目，需要把Notion从官网到AI对话的完整流程还原出来，5张截图如下：
+
+<notion_003.webp>
+这是Notion官网首页，深蓝紫色背景主题。顶部导航栏左侧"N"logo，中间菜单含Product/AI/Solutions/Resources（均带下拉箭头）、Enterprise、Pricing、"Request a demo"，右侧蓝色"Get Notion free"按钮和"Log in"链接。主体区域大标题"Meet the night shift."白色字体，副标题介绍Notion agents可以24/7自动推进工作，配蓝色"Get Notion free"和白色描边"Request a demo"两个CTA按钮。中央展示"Ramp HQ"项目管理看板产品截图（To-do/In progress/In review/Complete四列，含多个任务卡片），左侧显示Agents和Teamspaces导航结构。截图周围点缀彩色emoji图标。底部客户logo条：OpenAI/Figma/ramp/CURSOR/Vercel/NVIDIA/VOLVO/L'OREAL/Discord。点击"Get Notion free"或"Log in"进入注册页 <notion_004.webp>。
+
+<notion_004.webp>
+注册页面，白底居中布局。方形"N"logo图标，蓝色标题"Notion: your AI workspace."，灰色副标题"Sign up with your work email"。表单含"Work email"输入框（placeholder为"name@company.com"），输入框下方蓝色提示框建议使用工作邮箱。蓝色"Continue"按钮，"or continue with"分隔线下方五个第三方登录选项分两行：Google/Apple/Microsoft和Passkey/SSO。底部有"Existing user? Log in"链接和语言切换。输入邮箱后状态为 <notion_005.webp>。
+
+<notion_005.webp>
+注册页（已填邮箱状态），布局与 <notion_004.webp> 完全一致，区别是邮箱框已填入"samlee@content-mobbin.com"，右侧出现清除"x"按钮。点Continue完成注册后进入工作空间 <notion_001.webp>。
+
+<notion_001.webp>
+工作空间欢迎页。左侧边栏结构丰富：顶部"samlee's Space"工作空间名，下方Home（当前选中）、消息、日历、邮件、搜索等入口，分区包含"Trial 30 days left"标签、Recents、"Agents Beta"（+New agent）、Private区、Teamspaces区、Notion apps（Mail/Calendar/Desktop）和功能区（Library/My Tasks/Resources/Help/Trash），底部"New chat"按钮。主内容区展示Welcome to Notion页面，含挥手emoji、蓝色callout欢迎框、三个快速链接区块，其中"Get going"部分有带复选框的引导步骤。右侧浮现Notion AI助手面板，显示"Welcome samlee!"问候和预置prompt卡片"Build a project management hub in a new page."。点击AI助手开启对话 <notion_002.webp>。
+
+<notion_002.webp>
+AI对话页面。左侧边栏Recents中新增"Sidekick AI Instructions"条目。主区域顶部有猫咪表情Agent图标和"Meow... what's your request?"标题。对话输入区用户正在编写消息，附带了一张蓝色调移动端UI配色方案截图，消息内容询问是否有已发布App使用类似配色。输入框工具栏含附件/设置/"Ask mode"切换/模型选择（Sonnet 4.6）/麦克风/发送按钮。下方"Get better answers from your apps"提示条展示可连接的第三方应用图标（Slack/Google Calendar/Gmail等）。页面底部分两栏：左侧"Recent chats"为空，右侧"Suggested"列出三个建议操作（Create custom agent / Write meeting agenda / Analyze PDFs or images）。
+
+确保还原从官网注册到工作空间再到AI对话的完整导航链路，以及侧边栏在登录后各页面的一致呈现。

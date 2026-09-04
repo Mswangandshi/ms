@@ -1,0 +1,13 @@
+作为一个数字营销团队的负责人，我需要搭建一个类似Semrush的SEO分析平台，从落地页到数据工作台的完整体验。
+
+<semrush_003.webp> 这是公开落地页。顶部有紫色通知横幅"Semrush is now an Adobe company"，导航栏含Semrush logo+"An Adobe Company"字样、Products/Pricing/Resources/Enterprise导航项，右上角Log In和Sign Up按钮。主体区域大标题"Be found everywhere search happens"，中间有网站输入框（带US国家选择下拉）和紫色"Get insights"按钮。页面下半部展示Keyword Gap分析工具的产品截图预览，包含warbyparker.com的关键词分析数据和Shared/Missing/Weak/Strong/Untapped标签页。点击"Sign Up"进入 <semrush_004.webp>。
+
+<semrush_004.webp> 注册第一步。页面中央"Create your account"标题，提供"Continue with Google"按钮和邮箱输入框两种注册方式，底部有Terms of Service/Privacy Policy链接和登录入口。左下角有reCAPTCHA标识。输入邮箱后页面展开为 <semrush_005.webp>。
+
+<semrush_005.webp> 注册第二步，在 <semrush_004.webp> 基础上动态展开了Password输入框（带密码可见性切换）和橙色"Create account"提交按钮。完成注册后进入 <semrush_001.webp>。
+
+<semrush_001.webp> 登录后的平台首页（空数据状态）。顶部全局导航含搜索框，左侧垂直侧边栏从上到下排列：Home（高亮）、SEO、AI、Traffic & Market、Local、Content、Social、Ad、AI PR、Reports、App Center等模块入口。主区域大标题"Start optimizing your online presence"，有网站输入框和蓝紫渐变"Start now"按钮，浅紫色波浪渐变背景。底部有联系/关于/博客链接和语言选择器，右下角蓝色圆形帮助按钮。输入网站后进入 <semrush_002.webp>。
+
+<semrush_002.webp> 有数据的工作台Dashboard。顶部和左侧导航不变。主体顶部是功能模块快捷入口卡片横向滚动区（Social/AI Visibility/Traffic & Market/Local/Content等，部分右上角有绿色勾号）。下方"CopilotAI"个性化推荐区域。再下方是Folders项目管理区，带搜索、Ownership/Tags筛选、Table view切换、Share和Create Folder按钮。项目列表展示两个已配置站点的SEO/AI Visibility/Mentions/Site Health/Organic Traffic/Backlinks等多维度指标数据。
+
+整体保持紫色品牌色系，注意左侧导航栏在所有登录后页面保持一致。

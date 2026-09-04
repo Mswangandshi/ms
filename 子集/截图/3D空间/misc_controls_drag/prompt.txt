@@ -1,0 +1,12 @@
+复现截图中的彩色立方体拖拽场景，支持Shift多选编组和分组整体变换。
+
+场景中散布着约200个大小不一、朝向各异的随机颜色立方体方块，堆叠在浅灰色背景前方。每个方块颜色各异——绿色、橙色、紫色、青色、粉色、深蓝等，材质为漫反射质感，带有来自聚光灯的柔和阴影投射。
+
+核心交互是拖拽控制：鼠标直接拖拽任意方块移动到新位置。按住Shift再点击可将方块加入或移出编组，被选中的方块高亮发光。编组后可作为整体一起拖拽。按M键在触摸模式下切换旋转和平移。
+
+页面顶部居中显示蓝色链接"three.js"以及黑色文字"webgl - drag controls"，下方三行操作说明：
+- Use "Shift+Click" to add/remove objects to/from a group.
+- Use "M" to toggle between rotate and pan mode (touch only).
+- Grouped objects can be transformed as a union.
+
+整体背景为浅灰色（#f0f0f0），所有方块均为程序生成的几何体，不需要加载外部模型。

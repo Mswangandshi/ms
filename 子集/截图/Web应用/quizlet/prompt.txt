@@ -1,0 +1,13 @@
+我想还原一个Quizlet这样的学习类App，蓝紫色品牌风格，有闪卡、考试和教材解答功能。
+
+<quizlet_001.webp> 启动屏 — 纯蓝紫色背景+居中白色Q形logo（圆环+中心圆点），无交互元素，自动跳转到 <quizlet_005.webp>。
+
+<quizlet_005.webp> 注册页 — 圆形人物照片配装饰手绘线条，"The best way to study."标题，提供Google/Apple/邮箱三种注册方式，底部有登录入口。注册后进入 <quizlet_002.webp>。
+
+<quizlet_002.webp> 订阅选择 — 底部弹出的付费墙sheet，两个套餐卡片（年付带绿色"Best Value"徽章+勾选状态，月付），下方时间轴展示试用流程三步骤，底部金色"Try free and subscribe"按钮。
+
+<quizlet_003.webp> 首页 — 顶部薰衣草渐变搜索栏+猫头鹰吉祥物头像，"Jump back in"学习卡片（含进度条和Continue按钮），Recents列表展示最近的闪卡集和教材条目。底部三栏tab（Home/Create/Library）。点击教材条目进入 <quizlet_004.webp>。
+
+<quizlet_004.webp> 教材章节列表 — 教材封面缩略图+标题/版次/ISBN/作者信息，下方"Step-by-step solutions"章节卡片列表。
+
+保持蓝紫色品牌主色和圆角卡片式布局风格。

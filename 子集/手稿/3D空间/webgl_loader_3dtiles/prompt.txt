@@ -1,0 +1,3 @@
+我在做一个地球级实景三维可视化的demo，需要加载Google Photorealistic 3D Tiles并叠加体积云渲染效果。画面中广阔的深蓝色海面占据下半部分，海天相接处有柔和的大气散射过渡，上方是写实的蓝天白云——蓬松的积云层次分明，具有体积感和光照阴影。整个场景采用了大气透视效果（aerial perspective），远处的海面与天空自然融合，色调从近处的深蓝渐变到远处的灰蓝。初始视角位于东京上空俯瞰，可以用鼠标进行地球导航式的交互——拖拽平移、滚轮缩放。页面顶部居中显示白色标题文字"three.js - 3d-tiles-renderer + three-clouds"，下方注明"Google Photorealistic Tiles token courtesy of Cesium Ion."，再下方有一个"time of day:"滑块控件可以调节太阳位置从而改变光照和云层明暗。左下角显示Google和Cesium ion的品牌Logo水印。
+
+请生成一个完整可运行的HTML文件，还原截图中的天空、云层、海面色调、时间滑块控件以及页面UI元素。

@@ -1,0 +1,3 @@
+Kastle官网共13张连续截图。Kastle是一家为消费贷款行业打造AI语音代理的公司，页面设计非常有质感——白色背景上漂浮着大量紫粉色调的3D花瓣/扇形装饰元素，营造出柔和而未来感的视觉氛围。首屏标题"Purpose-built AI agents for consumer lending and servicing"使用衬线体，字号巨大，居中排列。导航栏用全大写等宽字体，包含USE CASES、HOW IT WORKS、FEATURES、NEWS & UPDATES、CAREERS，右侧有紫色描边的"BOOK A DEMO"按钮。按钮整体采用大圆角胶囊造型。底部露出了产品界面截图，展示Servicing和Lending两个标签页。
+
+请复刻截图中展示的每一个视觉元素，包括3D装饰的布局位置、字体风格、颜色体系和整体留白节奏，输出一个精确还原的HTML文件。

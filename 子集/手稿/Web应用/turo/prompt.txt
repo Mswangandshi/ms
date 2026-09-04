@@ -1,0 +1,18 @@
+个人车辆共享租赁——这就是Turo的核心模式，紫色作为品牌强调色贯穿整个平台。5张截图覆盖了从首次访问到搜索租车的完整流程：
+
+<turo_003.webp> 官网首页（未登录）
+顶部紫色促销横幅"Earn up to $1,000 per month sharing your car on Turo"。导航栏左侧黑底TURO logo，右侧"Why choose Turo"+汉堡菜单。主体蓝色调汽车hero大图叠加白色标题"Rental reinvented"和内嵌搜索栏（Where/From/Until+紫色圆形搜索按钮）。hero下方分类标签栏（All选中/Airports/Monthly/Nearby/Delivered/Cities），再下方"Inspired by your recent searches"区块以2x3网格展示6辆推荐车辆卡片（含缩略图、车名年份、星级评价）。用户点击右上角汉堡菜单展开 <turo_004.webp>。
+
+<turo_004.webp> 汉堡菜单展开态
+首页右上角弹出白色下拉面板，菜单项从上到下：Log in、Sign up、Become a host、Why choose Turo、Gift cards、Contact support、Legal、Insurance & protection、Host tools、Carculator，每项配线条风格图标。点击"Sign up"弹出 <turo_005.webp>。
+
+<turo_005.webp> 注册模态框
+半透明遮罩覆盖首页，中央白色圆角弹窗，标题"Welcome to Turo"，三个全宽登录按钮（Apple/Google/Email），底部紫色"Already have an account? Log in"链接和法律条款。完成注册后进入 <turo_001.webp>。
+
+<turo_001.webp> 已登录首页
+与未登录版本的核心差异：hero大图被移除，搜索栏独立为页面顶部浅灰搜索条；导航栏新增"Ask Turo"AI按钮（紫色星形图标）。分类标签和推荐车辆区块保持一致。下方新增"Truck rental in Atlanta"横滑卡片区（每张含车辆大图、日租价/总价信息和翻页箭头）。用户使用搜索栏搜索后进入 <turo_002.webp>。
+
+<turo_002.webp> 搜索结果页
+顶部搜索栏回显已选参数（地点/日期/年龄），下方横向筛选器栏（Price/Vehicle type/Make & model/Years/Seats等下拉按钮+Grid/Map视图切换）。左侧车辆列表纵向排列卡片（照片+车名+评分+All-Star Host徽章+距离+总价+收藏心形），含紫色提示框"Book soon to avoid higher prices"。右侧半幅Google地图标注各车辆位置和价格标签，底部"Free cancellation"提示。
+
+请还原登录前后首页布局的差异（hero图有无、搜索栏位置变化、AI按钮出现），以及搜索结果页的列表+地图分栏交互。

@@ -1,0 +1,3 @@
+以下是Framer官网落地页的15张连续滚动截图，展示了该页面的主要内容。这是一个网站设计与发布工具，深色背景风格，首屏大标题"Build better sites, faster"以粗体白色字居中展示，副文案用浅灰色描述了CMS、SEO、analytics等功能卖点。下方有两个并排按钮"Start for free"和"Start with AI"。导航栏左侧是Framer的品牌logo和文字，中间排列着Product、Teams、Resources、Community、Support、Enterprise、Pricing，右侧是Log in和圆角"Sign up"按钮。首屏下方展示了多个用Framer搭建的网站案例缩略图。
+
+请根据截图逐像素复刻页面中展示的内容，包括所有文字内容、排版比例、颜色值、圆角大小和动效暗示，生成完整的HTML页面。

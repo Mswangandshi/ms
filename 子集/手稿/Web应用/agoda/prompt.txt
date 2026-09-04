@@ -1,0 +1,13 @@
+我在做一个旅行预订App的原型，需要还原Agoda的核心预订流程，包含以下5个页面：
+
+<agoda_001.webp> 启动闪屏 — 纯白背景，中央显示agoda灰色logo和5个品牌彩色圆点（红黄绿紫蓝），无交互元素，加载完成后自动跳转。
+
+<agoda_005.webp> 隐私条款确认页 — 深色背景配海边暮色风景照，左上角agoda logo，白色文字提示用户阅读使用条款和隐私政策（均可点击），左下角蓝色"Got it"按钮。点击后进入主页。
+
+<agoda_002.webp> 应用主页（Home tab选中） — 浅色背景，顶部左侧agoda logo旁有"VIP Bronze"会员徽章，右上角钱包余额"$ 38"带红点通知。主体为彩色卡片网格：上排两大卡片"Hotels + Homes"（粉色系配楼房插画）和"Flights"（紫色系配飞机插画），中排三小卡片"Flight + Hotel"、"Activities"、"Homes only"。下方横向图标行：Attractions、Airport Transfer、Car Rentals、eSIM、Trains。再下方是优惠券区域和"Deals For You"促销卡片。底部5-tab导航栏：Home、My Trips、Deals、Saved、More。点击"Hotels + Homes"卡片进入搜索页。
+
+<agoda_003.webp> 酒店搜索页 — 浅色背景，顶部粉红渐变装饰，标题"All rooms"。搜索表单包含Overnight/Day Use两个tab、目的地输入框（显示Singapore）、入住退房日期选择、房间人数配置、"Show limited time offers first"勾选项（带红色Save up to 20%标签）。底部左侧地图图标，右侧蓝色"Search"按钮。下方展示赞助商信息和折扣优惠券。点击Search进入结果列表。
+
+<agoda_004.webp> 搜索结果列表页 — 顶部搜索栏显示"Singapore (735)"及日期，下方Filters/Price/Sort三个筛选按钮。绿色促销横幅"ONE-HOUR AGODASALE!"带"CLAIM"按钮。酒店卡片列表含照片、星级、评分、位置距离、价格、标签（Agoda Preferred/Sponsored/Rare price等）。中间穿插atome分期付款优惠区域和Instagram热门酒店蓝色横幅。底部有List/Gallery/Map三种视图切换按钮。
+
+请还原完整的页面跳转逻辑和各页面的视觉层次。

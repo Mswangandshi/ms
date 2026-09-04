@@ -1,0 +1,13 @@
+请帮我复刻Perplexity这个AI搜索平台的Web端界面，它整合了对话搜索、Computer模式、新闻、金融和健康等多个频道。5个页面涵盖核心功能：
+
+<perplexity_001.webp> 搜索主页 — 左侧导航侧边栏（New/Computer/Spaces/Artifacts/Customize/History等），顶部频道切换栏（Discover/Finance/Health/Academic/Patents），主区域居中品牌标识+搜索输入框（已输入"Generate a simple cat meow in audio format"），框内有Computer模式和GPT-5.5模型选择下拉，下方三个快捷建议标签。点击发送进入结果页。
+
+<perplexity_002.webp> Computer模式对话结果页 — 标题"Generating a Simple Cat Meow Audio"，右上角分屏和Share按钮。主区域展示完整AI执行流程：用户消息 → AI回复 → 多步骤执行过程（Loading skill/生成短视频/提取音轨） → 最终输出音频播放器（cat_meow.mp3，含进度条、暂停、音量、下载按钮）。右侧信息面板显示Artifacts/Sources/Usage。底部后续输入框模型为Claude Opus 4.8。
+
+<perplexity_003.webp> Discover新闻页 — 标题"Discover"，含For You/Top/Topics tab。卡片式新闻布局，头条大卡+三列子卡排列，每条标注来源数和时间。右侧面板包含兴趣选择（Tech/Business/Arts等可勾选）、天气卡片、Market Outlook股指数据、Trending Companies模块。
+
+<perplexity_004.webp> Finance股票详情页 — Tesla (TSLA)完整信息页。面包屑"Perplexity Finance > TSLA"，Tab导航（Overview/Financials/Earnings/Holders等）。股价$408.95+走势图（支持1D到MAX切换），关键指标网格（Market Cap/P/E/EPS等）。右侧公司概况面板和Analyst Consensus（Buy评级分布）。底部有"Ask anything about Tesla"对话输入框。
+
+<perplexity_005.webp> Health健康仪表盘（Beta） — 欢迎文字+Overview/History tab。三个健康指标卡片（Steps/Active Minutes/Calories）含评级和每日柱状图。Health Workflows区域展示引导卡片（Health review/Nutrition planner/Lab results）。右侧面板含Connectors、Health files上传、Bio和E2E加密提示。
+
+页面间通过顶部频道切换栏导航：搜索主页 → Computer结果 → Discover → Finance → Health。保持左侧边栏在所有页面一致。

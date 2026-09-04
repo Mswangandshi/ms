@@ -1,0 +1,3 @@
+以下是Klarna官网落地页的13张连续滚动截图，展示了该页面的主要内容。Klarna是全球知名的先买后付支付平台，页面顶部有"For shoppers / For business"的切换入口，导航栏包含Discover Klarna、Shop、App、Help，右侧有搜索图标和黑底白字"Sign in"胶囊按钮。首屏是一张占满宽度的暗色调大图，展示手持Klarna品牌卡片的特写照片，左侧叠加白色大字标题"A card worth getting"和粉色"Sign up"按钮。下方有Trustpilot评分4.5、20年经验、119m用户等数据指标，"millions"一词用粉色高亮标注。整体配色是白底+黑字+粉色点缀的简洁商务风格。
+
+请根据这些截图精确复刻Klarna的官网页面，所有排版层级、配色细节、按钮样式、图片位置和文案内容都必须与原页面一致。

@@ -1,0 +1,13 @@
+绿色品牌色+紫色导航栏的双色搭配，是Skillshare这个在线创意学习平台最鲜明的视觉标识。我想复刻从落地页到课程播放的完整流程：
+
+<skillshare_003.webp> 落地页 — 左侧大号绿色S形装饰图形，主区域"Creative Classes Taught by the Best Creative Pros"标题。右侧注册区提供Google/Facebook/Apple三种社交登录和邮箱注册入口。底部展示UI/UX Design、Productivity、Photography等课程类别缩略图。点击注册按钮弹出 <skillshare_004.webp>。
+
+<skillshare_004.webp> 注册弹窗（社交登录模式） — 左黑右白分栏布局。左侧"Join Skillshare for Free"+绿色进度条+描述文字；右侧三个社交登录按钮+"Sign Up Using Email"链接。点击邮箱注册切换为 <skillshare_005.webp>。
+
+<skillshare_005.webp> 注册弹窗（邮箱模式） — 布局同上，右侧在社交按钮下方增加Email输入框和绿色"Sign Up"按钮。注册完成后进入 <skillshare_001.webp>。
+
+<skillshare_001.webp> 个人首页 — 紫色顶部导航栏（logo+Browse+Creative Feed带绿色New标签+搜索框+通知铃铛）。紫色横幅展示新手任务徽章进度（三个已完成的勾选任务）。主区域"Get Started in Hand Lettering"课程推荐，横向类别标签切换，下方4个课程卡片（含缩略图、Staff Pick标签、评分、讲师、学生数、时长）。点击课程进入 <skillshare_002.webp>。
+
+<skillshare_002.webp> 课程播放页 — 上半部分左侧视频播放器（含速度/画中画/全屏控制），右侧课程大纲面板（10节课时列表+学习徽章进度条）。下半部分About/Projects/Reviews/Discussions/Transcripts标签页。
+
+确保弹窗在落地页上叠加显示（背景遮罩暗化），以及紫色导航栏在登录后页面保持一致。

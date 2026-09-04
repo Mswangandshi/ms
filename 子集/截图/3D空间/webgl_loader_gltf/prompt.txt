@@ -1,0 +1,9 @@
+这个受损头盔的环境反射效果很惊艳，帮我做个一样的。头盔整体呈球形，面罩为深色透明材质，表面布满裂纹和划痕，可以清晰看到内部的电路板和发光元件。头盔两侧各有一个青色发光的圆形传感器，底部连接着管线和金属接口。金属外壳呈现逼真的磨损和锈蚀质感，高光处可见清晰的环境反射。背景使用HDR环境贴图（Royal Esplanade），可见大理石地面、玻璃护栏、墙面装饰圆盘等细节，环境光自然地映射在头盔的金属和玻璃表面上。场景采用电影级色调映射，整体色彩饱满温暖。右上角有一个GUI控制面板，标题为"Controls"，包含一个"model"下拉选择框（默认为DamagedHelmet，可从Khronos GLTF样本库中选择其他模型加载）和一个"backgroundBlurriness"滑块（控制背景模糊程度，默认为0即清晰背景）。页面顶部居中显示白色标题文字"three.js - GLTFLoader"及"Royal Esplanade from HDRI Haven"字样。可以用鼠标自由旋转、缩放观察模型，交互带有阻尼平滑效果。
+
+环境贴图资源（HDR格式）：
+https://threejs.org/examples/textures/equirectangular/royal_esplanade_2k.hdr.jpg
+
+模型资源（GLTF格式，从Khronos官方样本库动态加载）：
+https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/DamagedHelmet/glTF-Binary/DamagedHelmet.glb
+
+生成一个完整可运行的HTML文件，加载上述HDR环境贴图和GLTF模型，还原环境反射、色调映射、GUI控制面板以及页面UI元素。

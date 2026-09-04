@@ -1,0 +1,3 @@
+Teak是一个游戏玩家留存引擎，以下是其官网落地页的11张连续滚动截图，展示了该页面的主要内容。页面风格温暖可爱，米白/奶油色背景搭配深棕色文字，品牌强调色为明亮的黄色。导航栏别具一格——每个菜单项前有不同颜色的小方块标记（绿色Product、蓝色Pricing、粉色Blog、橙色About），右侧有Log in文字和深棕色实心"Book a demo"等宽字体按钮。首屏标题"The retention engine behind irresistible games"用粗体无衬线字，"irresistible"加了黄色高亮底色。右侧展示了一个手机推送通知的mockup（"Hey Kate, play now and get 50K Coins!"），下方有数据指标"30%+ Higher CTR"等。黄色大圆角"Book a demo"按钮非常显眼。
+
+请1:1复刻Teak的页面，奶油底色、深棕文字、黄色高亮、彩色导航标记和等宽字体按钮都要精确还原。

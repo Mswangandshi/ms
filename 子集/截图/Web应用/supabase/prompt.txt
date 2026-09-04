@@ -1,0 +1,13 @@
+请帮我还原这个Supabase数据库管理平台的完整后台界面，包含5个核心功能页面：
+
+<supabase_001.webp> 项目仪表盘首页 — 顶部面包屑导航（workspace > project > branch），左侧图标侧边栏（Home/Table Editor/SQL Editor/Database/Storage/Auth/Edge Functions等）。主区域展示2x3状态卡片网格（Status/Compute/GitHub/Branch/Migration/Backup）、右侧数据库资源监控面板（CPU/Disk/RAM/连接数），下方有5种连接方式卡片和请求统计区。
+
+<supabase_002.webp> Table Editor数据视图 — 左侧schema选择器和表列表，主区域为电子表格风格数据网格，支持AI筛选、RLS策略、角色切换，底部有分页和Data/Definition视图切换。
+
+<supabase_003.webp> SQL Editor带图表可视化 — 左侧保存的查询列表（含SHARED/FAVORITES/PRIVATE分组），代码编辑器显示SQL语句，下方Results/Explain/Chart/Export标签页，Chart标签展示柱状图及右侧图表配置面板。
+
+<supabase_004.webp> Schema Visualizer — 数据库ER关系图，展示多张表（oauth_authorizations/oauth_clients/saml_providers/users等）的字段、类型和约束关系连线，支持schema切换和"Copy as SQL"。
+
+<supabase_005.webp> Edge Functions监控 — 某个函数的详情页，展示最近调用记录（含状态码和响应时间）、执行时间面积图、调用次数柱状图（按状态码着色），以及Worker日志。
+
+页面间通过左侧侧边栏图标导航切换，请还原这个统一的导航结构和深色主题界面。

@@ -1,0 +1,18 @@
+一个造型可爱的黄色机器人角色站在灰色地面上——方形的大脑袋上有两颗黑色的圆球眼睛，头顶有两个黑色的矩形"天线"，头部两侧用灰色金属铆钉固定。身体为圆柱形的黄色躯干，四肢由铰接关节连接，手部和脚部为灰色金属质感。地面铺设着半透明的黑色方格网格线，整体背景为浅灰白色雾化效果。
+
+机器人拥有丰富的动画系统，支持多种基础运动状态和一次性表情动作：
+- 基础状态动画可循环播放，包括Idle（待机）、Walking（行走）、Running（奔跑）、Dance（跳舞）、Death（死亡）、Sitting（坐下）、Standing（站立）等
+- 一次性表情动作播放完毕后自动回到当前基础状态，包括Jump（跳跃）、Yes（点头）、No（摇头）、Wave（挥手）、Punch（出拳）、ThumbsUp（竖拇指）等
+- 面部表情通过变形目标独立控制，不影响肢体动画
+
+页面右侧有一个三分组的GUI控制面板：
+- "States"分组：包含一个state下拉菜单，可在各种基础动画状态之间切换，切换时会平滑过渡
+- "Emotes"分组：包含Jump、Yes、No、Wave、Punch、ThumbsUp六个按钮，点击后播放对应的一次性动作
+- "Expressions"分组：包含Angry、Surprised、Sad三个滑块，可以独立调节面部表情的变形程度
+
+页面顶部居中显示标题"three.js webgl - skinning and morphing"，下方有一段关于动画系统的说明文字以及模型作者信息"Model by Tomas Laulhe, modifications by Don McCurdy. CC0."。左上角有FPS监控面板。
+
+模型资源（GLTF格式）：
+https://threejs.org/examples/models/gltf/RobotExpressive/RobotExpressive.glb
+
+请根据截图复现该场景，生成一个完整可运行的HTML文件，加载上述机器人模型，实现多种动画状态的平滑切换、一次性表情动作的播放与自动恢复、面部变形目标的独立控制，还原灰白色雾效背景、地面网格线和右侧三分组GUI控制面板。

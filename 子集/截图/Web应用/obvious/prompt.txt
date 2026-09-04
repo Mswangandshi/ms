@@ -1,0 +1,13 @@
+嘿，我看到一个叫Obvious的AI协作办公工具，主打"Less Chat. More Work."，能用对话生成表格、文档、看板这些。想照着做一套完整的产品界面，5个页面：
+
+<obvious_003.webp> 营销首页 — 顶部导航栏含Audiences/Features/Pricing等入口，主区域核心标语+绿色CTA按钮，下半部分嵌入看板演示截图，展示AI Chat驱动生成Kanban board的过程。点击"Get started"或"Sign up"跳转注册页。
+
+<obvious_004.webp> 注册页 — 花形logo居中，支持Google OAuth和手动表单（Name/Email/Password），底部有登录入口链接。
+
+<obvious_005.webp> 注册填写状态 — 同一注册页，表单已填入信息，新增密码强度检测模块（强度条+要求清单），按钮变为可点击状态。完成注册后进入工作空间。
+
+<obvious_001.webp> 工作空间主页 — 左侧导航侧边栏（Home/Projects/Templates/Artifacts/Notes/Tasks等），主区域有AI输入框和快捷创建按钮行（Table/Doc/Slides/Board/Calendar/Timeline），下方展示模板建议卡片。
+
+<obvious_002.webp> 项目详情页 — 左右分栏：左侧Chat面板带AI对话输入框，右侧Artifacts面板展示可编辑数据表格（含工具栏和筛选功能），顶部有面包屑导航和搜索。
+
+页面间跳转关系：首页CTA → 注册页 → 填写表单 → 工作空间主页 → 侧边栏进入项目详情。请还原完整的导航结构和交互流程。

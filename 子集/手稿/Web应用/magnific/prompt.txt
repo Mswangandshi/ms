@@ -1,0 +1,13 @@
+想做一个类似Magnific（原Freepik）的AI创意平台，5张截图走完从官网到编辑器的流程，帮我看看能不能还原出来。
+
+<magnific_003.webp> 营销首页 — 顶部"Freepik is now Magnific"横幅，导航含Creative Suite/Stock/Pricing等项。hero区粉紫渐变底色配动态人物照片，左侧"#1 AI creative platform"徽章，大标题"The creative platform to direct your best work"，右侧有纵向滚动的功能关键词列表（Cast characters、Upscale to 4K等）。底部Coca-Cola/Ogilvy等客户logo。点Sign up进入注册 <magnific_004.webp>。
+
+<magnific_004.webp> 注册页 — 左2/3是粉紫花卉艺术照，右1/3白底展示Magnific logo（"formerly Freepik"）和三个认证按钮：Continue with Google/Apple/email，底部有营销邮件opt-out和条款声明。选email后进入 <magnific_005.webp>。
+
+<magnific_005.webp> 邮箱注册表单 — 同样左右分栏，右侧表单含Email和Password输入框、紫色"Sign up"按钮、"< Back"返回链接。注册完成后进入 <magnific_001.webp>。
+
+<magnific_001.webp> 应用仪表盘 — 左侧边栏有粉色"Create"按钮、Home/Search/Stock/Explore/Projects和工具子菜单（Spaces/Image Generator/Video Generator等），底部通知徽章显示16。主区域"Good morning, start creating!"问候语+搜索栏，下方6个工具类别卡片（Spaces/Image/Video/Audio/3D/Stock），再下方三栏并排：Projects列表、"Create a space"引导面板、钉选工具快捷入口。进入Space或图片编辑器到 <magnific_002.webp>。
+
+<magnific_002.webp> Spaces画布编辑器 — 深灰背景，左侧竖排工具栏（选择/平移/文字/调节/取景框/撤销重做），画布上展示一个食物摄影+品牌底栏的设计稿（"BRANDT & SOHNE"），选中图片块有蓝色边框。右侧属性面板含尺寸、透明度、蒙版、填充、边框、阴影、外观调整等控制项，底部有缩放百分比和导出设置。
+
+保留各页面间的注册登录跳转关系。

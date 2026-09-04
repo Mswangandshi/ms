@@ -1,0 +1,20 @@
+帮我还原截图中的骨骼动画混合控制场景。
+
+场景中央是一个身着科幻战斗装甲的战士角色模型——米黄色铠甲、暗色面罩头盔、红色腰带装饰和深色膝盖护甲。角色正在地面上行走，不同截图捕捉了行走动画中不同的步态姿势，阴影随动作实时变化。
+
+该场景的核心功能是骨骼动画混合控制。角色拥有三种动画状态：idle（待命）、walk（行走）、run（奔跑），可以通过GUI面板进行精细的动画控制与平滑过渡。
+
+页面右侧有一个内容丰富的多分组GUI控制面板：
+- "Visibility"分组：show model和show skeleton两个复选框，可以显示/隐藏模型网格和骨骼辅助线
+- "Activation/Deactivation"分组：deactivate all和activate all两个按钮
+- "Pausing/Stepping"分组：pause/continue按钮、make single step按钮、modify step size滑块——支持暂停动画后逐帧步进
+- "Crossfading"分组：from walk to idle、from idle to walk、from walk to run、from run to walk四个交叉淡入淡出过渡按钮（根据当前状态部分按钮会自动禁用），use default duration复选框和set custom duration滑块用于控制过渡时长
+- "Blend Weights"分组：modify idle weight、modify walk weight、modify run weight三个权重滑块，实时显示并控制各动画的混合权重
+- "General Speed"分组：modify time scale滑块控制整体播放速度
+
+背景为灰色渐变配合雾效。页面顶部显示红色标题"three.js - Skeletal Animation Blending (model from mixamo.com)"，下方提示"Note: crossfades are possible with blend weights being set to (1,0,0), (0,1,0) or (0,0,1)"。左上角有FPS监控面板。
+
+模型资源（GLTF格式）：
+https://threejs.org/examples/models/gltf/Soldier.glb
+
+请生成一个完整可运行的HTML文件，加载上述战士模型，实现idle/walk/run三种动画的交叉淡入淡出过渡、权重混合调节、暂停与逐帧步进、骨骼可视化切换等全部功能，还原灰色雾效背景、投地阴影和右侧完整的GUI控制面板结构。

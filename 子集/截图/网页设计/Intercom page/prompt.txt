@@ -1,0 +1,3 @@
+以下是Intercom官网落地页的18张连续滚动截图，展示了该页面的主要内容。Intercom定位为"The only helpdesk designed for the AI Agent era"，页面以白色为主背景，搭配黑色粗体大标题和艺术感十足的摄影拼贴装饰。导航栏左侧是Intercom的盾形logo，菜单有Product、Customers、Resources、Pricing，右侧依次排列Log in、Contact sales、黑底白字"Start free trial"按钮和带边框的"Fin AI Agent"按钮。页面中段有功能标签页切换区域，包含Fully-featured helpdesk、Natively integrated AI Agent、AI-powered Insights、Self-improving system四个选项卡。
+
+请严格按照截图1:1复刻这个网站，还原每一处排版细节、字体选择、间距比例、图片布局和配色方案，生成一个完整的单页HTML文件。

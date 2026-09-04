@@ -1,0 +1,28 @@
+PayPal移动端的完整用户流程，从品牌启动到Debit Card管理，涵盖5个关键页面。
+
+---
+
+<paypal_005.webp>
+应用欢迎页。全屏沉浸式生活风格摄影照片：蓝天背景，一位女性仰拍视角举着白色手机，身穿粉色针织上衣和浅色牛仔裤，佩戴金色手环。照片中央覆盖超大号白色"PayPal"品牌文字。无按钮或导航元素，纯品牌展示过渡页。
+
+---
+
+<paypal_001.webp>
+应用加载页（Splash Screen）。纯深蓝色（PayPal品牌蓝）背景，正中央双P叠加logo，白色和浅蓝色渐变配色带轻微3D阴影。欢迎页自动过渡至此，登录验证完成后进入主页。
+
+---
+
+<paypal_002.webp>
+应用主页（Home）。浅蓝灰色背景。顶部汉堡菜单+通知铃铛+用户头像。主体是可横向滑动的账户卡片，当前显示"PayPal balance"白色圆角卡片（金额$1.00），内含蓝色横幅提示免费报税+Debit Card推广。"Recent activity"区域显示4笔交易图标。"Featured offers"展示Walmart+ 40%返现蓝色大号横幅卡片。底部5个tab导航：Home（选中）、Accounts、Send/Request（中央圆形按钮）、Activity、Offers。
+
+---
+
+<paypal_003.webp>
+账户页面（Accounts）。从主页点击底部Accounts tab进入。页面标题"Accounts"，下方横向功能标签按钮（Add banks and cards/Add cash at stores/Cash）。PayPal余额卡片展示$0.85余额，橙色"Activate PayPal Debit Card"入口，三个操作图标（Add Money/Transfer/Account Info）。下方浅蓝横幅推荐添加Debit Card到常用商店。"Rewards"区域展示多品牌logo和"Start earning cash back"链接。点击Activate或余额卡片进入Debit Card详情页。
+
+---
+
+<paypal_004.webp>
+PayPal Debit Card详情页。顶部返回箭头+标题。大号虚拟卡片展示：深蓝背景+白色PayPal水印，右上角橙色"Activate"按钮，左下角$0.85余额和部分模糊卡号，右下角Mastercard logo。卡片下方：绿色"+5%"积分返现提示、橙色卡片激活状态和到货时间。Manage/Activity两个tab切换（当前Manage），管理选项包括Lock card开关、设为默认支付方式开关、Add to Apple Wallet按钮。
+
+请还原完整的底部tab导航体系和页面间跳转关系。

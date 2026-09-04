@@ -1,0 +1,5 @@
+帮我还原Greptile这个AI代码审查工具的完整Web端界面，包含5个页面。
+
+<greptile_003.webp> 官网首页（landing page，网格背景+蜥蜴插图+客户logo墙）→ 点击"Sign up"进入 <greptile_005.webp> 注册页（左右分栏，左侧表单含邮箱/密码+三种社交登录，右侧紫蓝色3D几何装饰）→ 已有账号点"Login"切换到 <greptile_004.webp> 登录页（布局同注册页，仅标题和按钮文案不同）→ 登录后进入 <greptile_001.webp> Analytics仪表盘（绿色试用横幅、四个指标卡片、PR审查和Bug柱状图）→ 切换tab到 <greptile_002.webp> Repositories管理页（仓库表格列表含reviews/merge time列、分页控件）。
+
+注意注册页和登录页共享同一套左右分栏布局和右侧装饰，二级导航tab贯穿Analytics和Repositories两个页面。
